@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1tn7h8fp50a6"]
+[gd_scene load_steps=8 format=3 uid="uid://b1tn7h8fp50a6"]
 
 [ext_resource type="Script" path="res://bird.gd" id="1_35g8j"]
 [ext_resource type="Texture2D" uid="uid://1ja6david8yh" path="res://sprites/player-1.svg" id="1_rabuk"]
 [ext_resource type="Texture2D" uid="uid://d2rfs14gmw1ps" path="res://sprites/player-2.svg" id="2_agw4t"]
 [ext_resource type="Texture2D" uid="uid://cqmeypowpkry5" path="res://sprites/player-3.svg" id="3_0t548"]
+[ext_resource type="PackedScene" uid="uid://3ldfx6wsir0x" path="res://wall.tscn" id="5_c8u7w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ghhh4"]
 animations = [{
@@ -39,3 +40,5 @@ speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
 shape = SubResource("CircleShape2D_ydi08")
+
+[node name="Wall" parent="." instance=ExtResource("5_c8u7w")]
