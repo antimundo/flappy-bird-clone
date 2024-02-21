@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by0q1vhiejdbl"
-path="res://.godot/imported/wall.svg-a6549701eba7b9ccdc32e9fa07830140.ctex"
+uid="uid://1ja6david8yh"
+path="res://.godot/imported/player-1.svg-c1ede0e8f9af28f974016769a6f33a94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wall.svg"
-dest_files=["res://.godot/imported/wall.svg-a6549701eba7b9ccdc32e9fa07830140.ctex"]
+source_file="res://bird/player-1.svg"
+dest_files=["res://.godot/imported/player-1.svg-c1ede0e8f9af28f974016769a6f33a94.ctex"]
 
 [params]
 

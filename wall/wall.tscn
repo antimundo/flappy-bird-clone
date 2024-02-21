@@ -1,40 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ldfx6wsir0x"]
+[gd_scene load_steps=6 format=3 uid="uid://3ldfx6wsir0x"]
 
-[ext_resource type="Script" path="res://wall.gd" id="1_dygxf"]
-[ext_resource type="Texture2D" uid="uid://by0q1vhiejdbl" path="res://sprites/wall.svg" id="2_d7o4s"]
+[ext_resource type="Script" path="res://wall/wall.gd" id="1_dygxf"]
+[ext_resource type="Texture2D" uid="uid://by0q1vhiejdbl" path="res://wall/wall.svg" id="2_sceep"]
+[ext_resource type="AudioStream" uid="uid://coyef1j101n43" path="res://wall/kalimba.ogg" id="3_kbhcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya0ep"]
-size = Vector2(50, 200)
+size = Vector2(50, 400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnx5p"]
-size = Vector2(36, 174)
+size = Vector2(40, 200)
 
 [node name="Wall" type="Area2D"]
-position = Vector2(672, 0)
+position = Vector2(822, 0)
 script = ExtResource("1_dygxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(25, 100)
-texture = ExtResource("2_d7o4s")
+position = Vector2(25, 0)
+texture = ExtResource("2_sceep")
 flip_v = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(25, 499.25)
-texture = ExtResource("2_d7o4s")
+position = Vector2(25, 600)
+texture = ExtResource("2_sceep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 100)
+position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_ya0ep")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(25, 499)
+position = Vector2(25, 600)
 shape = SubResource("RectangleShape2D_ya0ep")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(75, 301)
+position = Vector2(75, 300)
 shape = SubResource("RectangleShape2D_gnx5p")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("3_kbhcr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

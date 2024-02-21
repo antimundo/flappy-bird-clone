@@ -9,11 +9,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if event.is_action_pressed("jump"):
 		jump()
 
 func _process(_delta):
 	rotation = velocity.y / 1000
+	if position.y > 700 or position.y < -100:
+		$"..".loose_game()
 
 func jump():
 	velocity.y = JUMP_VELOCITY
+	$JumpSound.play()
